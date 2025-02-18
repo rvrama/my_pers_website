@@ -2,29 +2,33 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 
+// You can customize these values
 const skills = [
   {
     category: "Leadership",
     items: [
-      { name: "Team Management", level: 95 },
       { name: "Strategic Planning", level: 90 },
+      { name: "Team Management", level: 95 },
       { name: "Stakeholder Management", level: 85 },
+      { name: "Change Management", level: 80 }
     ],
   },
   {
-    category: "Technical",
+    category: "Delivery & Operations",
     items: [
-      { name: "Agile Methodologies", level: 90 },
-      { name: "Project Management", level: 85 },
+      { name: "Project Management", level: 90 },
+      { name: "Agile Methodologies", level: 85 },
       { name: "Risk Management", level: 80 },
+      { name: "Process Optimization", level: 85 }
     ],
   },
   {
-    category: "Soft Skills",
+    category: "Technical Skills",
     items: [
-      { name: "Communication", level: 95 },
-      { name: "Problem Solving", level: 90 },
-      { name: "Decision Making", level: 85 },
+      { name: "Digital Transformation", level: 85 },
+      { name: "Data Analysis", level: 80 },
+      { name: "Business Intelligence", level: 75 },
+      { name: "Technology Strategy", level: 85 }
     ],
   },
 ];

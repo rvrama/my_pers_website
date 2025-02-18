@@ -2,31 +2,31 @@ import { motion } from "framer-motion";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
+// You can customize these values
 const experiences = [
   {
-    title: "Senior Delivery Manager",
-    company: "Tech Solutions Inc",
+    title: "Title of Your Current Role",
+    company: "Current Company Name",
     period: "2020 - Present",
-    description:
-      "Led cross-functional teams in delivering enterprise software solutions. Improved delivery efficiency by 40%.",
-    achievements: ["Agile Transformation", "Team Growth", "Process Optimization"],
+    description: "Describe your key responsibilities and major achievements in this role. Include specific metrics and results where possible.",
+    achievements: [
+      "Key Achievement 1",
+      "Key Achievement 2",
+      "Key Achievement 3"
+    ],
   },
   {
-    title: "Product Manager",
-    company: "Digital Innovations Co",
+    title: "Title of Your Previous Role",
+    company: "Previous Company Name",
     period: "2017 - 2020",
-    description:
-      "Managed product lifecycle and coordinated with stakeholders to ensure successful product launches.",
-    achievements: ["Revenue Growth", "Customer Satisfaction", "Market Expansion"],
+    description: "Describe your responsibilities and achievements in this previous role. Focus on relevant experience for your target position.",
+    achievements: [
+      "Key Achievement 1",
+      "Key Achievement 2",
+      "Key Achievement 3"
+    ],
   },
-  {
-    title: "Project Lead",
-    company: "Global Systems Ltd",
-    period: "2015 - 2017",
-    description:
-      "Supervised technical projects and mentored junior team members.",
-    achievements: ["On-time Delivery", "Budget Management", "Team Leadership"],
-  },
+  // Add more experiences as needed
 ];
 
 export default function Experience() {
@@ -41,7 +41,7 @@ export default function Experience() {
         <h2 className="text-3xl font-bold mb-8 text-center">
           Professional Experience
         </h2>
-        
+
         <div className="space-y-6">
           {experiences.map((exp, index) => (
             <motion.div
