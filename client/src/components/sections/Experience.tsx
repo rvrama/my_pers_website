@@ -5,25 +5,31 @@ import { Badge } from "@/components/ui/badge";
 // You can customize these values
 const experiences = [
   {
-    title: "Title of Your Current Role",
-    company: "Current Company Name",
-    period: "2020 - Present",
-    description: "Describe your key responsibilities and major achievements in this role. Include specific metrics and results where possible.",
+    title: "Vice President - Software Services",
+    company: "Reckonsys Tech Labs",
+    period: "Kan 2021 - Oct 2024",
+    description:
+      "As Head of delivery for Services business unit, accountable for delivery structure, processes and quality & timely deliver y of projects with 90+ talented engineers. Helped grow the revenue upto 52% yearly.",
     achievements: [
-      "Key Achievement 1",
-      "Key Achievement 2",
-      "Key Achievement 3"
+      "Delivery Organization setup",
+      "Project Management processes",
+      "Competency development",
+      "Revenue growth",
+      "Tech Leadership & Management",
+      "Hiring & Onboarding",
+      "Performance Management",
     ],
   },
   {
     title: "Title of Your Previous Role",
     company: "Previous Company Name",
     period: "2017 - 2020",
-    description: "Describe your responsibilities and achievements in this previous role. Focus on relevant experience for your target position.",
+    description:
+      "Describe your responsibilities and achievements in this previous role. Focus on relevant experience for your target position.",
     achievements: [
       "Key Achievement 1",
       "Key Achievement 2",
-      "Key Achievement 3"
+      "Key Achievement 3",
     ],
   },
   // Add more experiences as needed
