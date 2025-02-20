@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
+import { useRef, useState, useEffect } from "react";
 
 // You can customize these values
 const skills = [
@@ -33,6 +34,26 @@ const skills = [
   },
 ];
 
+const ProgressBar = ({ value }: { value: number }) => {
+  const [progress, setProgress] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  useEffect(() => {
+    if (isInView) {
+      setProgress(value);
+    }
+  }, [isInView, value]);
+
+  return (
+    <Progress 
+      ref={ref}
+      value={progress} 
+      className="h-2 transition-all duration-1000 ease-out"
+    />
+  );
+};
+
 export default function Skills() {
   return (
     <section id="skills" className="py-20">
@@ -60,7 +81,16 @@ export default function Skills() {
                   </h3>
                   <div className="space-y-4">
                     {skillGroup.items.map((skill, index) => (
-                      <div key={index}>
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ 
+                          duration: 0.5, 
+                          delay: index * 0.1 + groupIndex * 0.2 
+                        }}
+                        viewport={{ once: true }}
+                      >
                         <div className="flex justify-between mb-2">
                           <span className="text-sm font-medium">
                             {skill.name}
@@ -69,8 +99,8 @@ export default function Skills() {
                             {skill.level}%
                           </span>
                         </div>
-                        <Progress value={skill.level} className="h-2" />
-                      </div>
+                        <ProgressBar value={skill.level} />
+                      </motion.div>
                     ))}
                   </div>
                 </CardContent>
