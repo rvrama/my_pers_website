@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/sections/Hero";
 import Experience from "@/components/sections/Experience";
 import Skills from "@/components/sections/Skills";
+import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
 
 export default function Portfolio() {
@@ -27,6 +28,7 @@ export default function Portfolio() {
         <Hero />
         <Experience />
         <Skills />
+        <Testimonials />
         <Contact />
       </main>
     </motion.div>
