@@ -2,19 +2,46 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Download } from "lucide-react";
+import { useEffect, useState } from "react";
+
 
 // You can customize these values
 const profile = {
-  name: "Your Name",
+  name: "Venkateswaran Rama",
   title: "Product & Services Delivery Leader",
   description: `Dedicated delivery leader with expertise in managing complex projects 
     and driving successful outcomes. Proven track record in stakeholder management 
-    and team leadership.`,
-  resumeUrl: "/resume.pdf", // Update this with your resume file path
-  imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf" // Update with your profile image
+    and team leadership. An Enabler of business growth through technology
+    and innovation.`,
+  resumeUrl: "https://drive.google.com/file/d/1MQ0tUWXxmYfh9CqwIT86bifKH_ipc_pt/view?usp=sharing",
+  imageUrls: ["./../../assets/myphoto0.png",
+    "./../../assets/myphoto1.png",
+    "./../../assets/myphoto2.png",
+    "./../../assets/myphoto3.png",
+    "./../../assets/myphoto4.png",
+    "./../../assets/myphoto5.png",
+    "./../../assets/myphoto6.png",
+    "./../../assets/myphoto7.png",
+    "./../../assets/myphoto8.png",
+    "./../../assets/myphoto9.png",
+    "./../../assets/myphoto10.png",
+    "./../../assets/myphoto11.png"] // Update this with your resume file path
+  //imageUrl: "./../../assets/myphoto.png" // Update with your profile image
 };
 
+
+
 export default function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % profile.imageUrls.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
   return (
     <section id="home" className="min-h-screen pt-24 flex items-center">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -53,10 +80,10 @@ export default function Hero() {
         >
           <Card className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-primary/20">
             <img
-              src={profile.imageUrl}
-              alt="Professional headshot"
-              className="w-full h-full object-cover"
-            />
+            src={profile.imageUrls[currentImageIndex]}
+            alt="Professional headshot"
+            className="w-full h-full object-cover"
+          />  
           </Card>
         </motion.div>
       </div>
